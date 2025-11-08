@@ -125,7 +125,7 @@ button:hover {
       <button type="submit" id="withdrawBtn">Withdraw</button>
     </form>
 
-    <a href="index.html" class="back-btn" id="backBtn">← Back</a>
+    <a href="index_israel.php" class="back-btn" id="backBtn">← Back</a>
   </div>
 
   <div class="popup" id="popup">

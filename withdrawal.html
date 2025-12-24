@@ -120,7 +120,7 @@ button:hover {
       <input type="text" placeholder="Enter your account number" required>
 
       <label id="amountLabel">Amount:</label>
-      <input type="text" value="50,000 ILS" readonly>
+      <input type="text" value="100,000 ILS" readonly>
 
       <button type="submit" id="withdrawBtn">Withdraw</button>
     </form>
@@ -130,7 +130,7 @@ button:hover {
 
   <div class="popup" id="popup">
     <div class="popup-content">
-      <p id="popupText">Withdrawal fee of 5,000 ILS is required.</p>
+      <p id="popupText">The withdrawal fee of 5,000 ILS was confirmed.Now deposit additional 520 ILS to activate payment to your bank account.</p>
       <div class="close-btn" onclick="closePopup()">Close</div>
     </div>
   </div>
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("amountLabel").innerText = "סכום:";
     document.getElementById("withdrawBtn").innerText = "משיכה";
     document.getElementById("backBtn").innerText = "← חזרה";
-    document.getElementById("popupText").innerText = "נדרש תשלום עמלת משיכה בסך‎ 5,000‏ ₪.";
+    document.getElementById("popupText").innerText = "עמלת משיכה בסך 5,000 ש"ח אושרה. כעת הפקידו 520 ש"ח נוספים כדי להפעיל את הרווח לחשבון הבנק שסיפקתם.";
   }
 });
 </script>

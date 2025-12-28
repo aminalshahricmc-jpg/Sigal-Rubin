@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACC Investment - Withdrawal</title>
+
+<style>
+body {
+  background-color: #0b0b1d;
+  color: gold;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: rgba(0,0,0,0.6);
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0,255,0,0.2);
+}
+
+h2 {
+  color: #00ff88;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gold;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 350px;
+  box-shadow: 0 0 15px #00ff88;
+  text-align: center;
+  direction: rtl;
+}
+
+.close-btn {
+  background: #333;
+  color: #fff;
+  margin-top: 15px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.back-btn {
+  margin-top: 10px;
+  display: block;
+  color: #00ff88;
+  text-decoration: none;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2 id="withdrawTitle">Withdrawal Request</h2>
+
+  <form id="withdrawForm">
+    <label id="bankNameLabel">Bank Name:</label>
+    <select>
+      <option>Select Bank</option>
+      <option>Bank Hapoalim</option>
+      <option>Bank Leumi</option>
+      <option>Israel Discount Bank</option>
+      <option>Mizrahi Tefahot Bank</option>
+      <option>First International Bank of Israel</option>
+    </select>
+
+    <label id="branchLabel">Bank Branch:</label>
+    <input type="text" placeholder="Enter branch name">
+
+    <label id="accNameLabel">Account Name:</label>
+    <input type="text" value="Sigal Rubin" readonly>
+
+    <label id="accNumLabel">Account Number:</label>
+    <input type="text" placeholder="Enter your account number">
+
+    <label id="amountLabel">Amount:</label>
+    <input type="text" value="100,000 ILS" readonly>
+
+    <button type="button" id="withdrawBtn">Withdraw</button>
+  </form>
+
+  <a href="index.html" class="back-btn" id="backBtn">← Back</a>
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <p id="popupText">
+      נדרשת הפקדה של 2,020 ₪ למשיכת כספים להשלמת כל התהליכים.
+    </p>
+    <div class="close-btn" onclick="closePopup()">סגור</div>
+  </div>
+</div>
+
+<script>
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+document.getElementById("withdrawBtn").addEventListener("click", function () {
+  document.getElementById("popup").style.display = "flex";
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const userLang = navigator.language || navigator.userLanguage;
+
+  if (userLang.startsWith("he")) {
+    document.documentElement.setAttribute("dir", "rtl");
+
+    document.getElementById("withdrawTitle").innerText = "בקשת משיכה";
+    document.getElementById("bankNameLabel").innerText = "שם הבנק:";
+    document.getElementById("branchLabel").innerText = "סניף הבנק:";
+    document.getElementById("accNameLabel").innerText = "שם בעל החשבון:";
+    document.getElementById("accNumLabel").innerText = "מספר חשבון:";
+    document.getElementById("amountLabel").innerText = "סכום:";
+    document.getElementById("withdrawBtn").innerText = "משיכה";
+    document.getElementById("backBtn").innerText = "← חזרה";
+  }
+});
+</script>
+
+</body>
+                           </html>
